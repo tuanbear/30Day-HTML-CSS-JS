@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Tags</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <h2>Search Tags</h2>
+      <div class="box__content">
+        <ul class="box__tags"></ul>
+        <input type="text" placeholder="Type and enter" />
+      </div>
+      <button class="button">Remove All</button>
+    </div>
+  </body>
+  <script>
+    const input = document.querySelector(".box__content input");
+    const boxTags = document.querySelector(".box__tags");
+    const clearTag = document.querySelector(".button");
+
+    var tags = ["nodejs", "reactjs"];
+    var htmls = "";
+
+    function createTags() {
+      htmls = "";
+      for (let index = 0; index < tags.length; index++) {
+        htmls += `
+        <li class="tag">
+            ${tags[index]}
+            <i onclick="removeTag(${index})" class="fa-solid fa-xmark close"></i>
+        </li>
+        `;
+      }
+      boxTags.innerHTML = htmls;
+    }
+    createTags();
+    input.addEventListener("keydown", (e) => {
+      if (e.keyCode === 13) {
+        if (input.value.trim() !== "") {
+          let count = 0;
+          for (let index = 0; index < tags.length; index++) {
+            if (input.value.trim() === tags[index]) {
+              input.value = "";
+              return false;
+            }
+          }
+          tags.push(input.value.trim());
+          createTags();
+        }
+        input.value = "";
+      }
+    });
+    function removeTag(index) {
+      tags.splice(index, 1);
+      createTags();
+    }
+    clearTag.addEventListener("click", (e) => {
+      tags = [];
+      createTags();
+    });
+  </script>
+</html>

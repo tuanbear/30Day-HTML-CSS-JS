@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Popup</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button class="modal_btn">Open Modal</button>
+    <div class="modal">
+      <div class="modal_inner">
+        <div class="modal_inner-header">
+          Welcome to Nodemy
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h2>Modal</h2>
+        <p>Đây là phần body của Modal</p>
+        <button class="close">Close</button>
+      </div>
+    </div>
+    <script>
+      const modalBtn = document.querySelector(".modal_btn");
+      const modal = document.querySelector(".modal");
+      const iconClose = document.querySelector(".fa-xmark");
+      const closeBtn = document.querySelector(".close");
+
+      function toggleModal() {
+        modal.classList.toggle("hidden");
+      }
+
+      modalBtn.addEventListener("click", toggleModal);
+      iconClose.addEventListener("click", toggleModal);
+      closeBtn.addEventListener("click", toggleModal);
+      modal.addEventListener("click", (e) => {
+        console.log(e.target, e.currentTarget);
+        if (e.target == e.currentTarget) {
+          toggleModal();
+        }
+      });
+    </script>
+  </body>
+</html>

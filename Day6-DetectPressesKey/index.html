@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detect Presses Key</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wait">Press any key</div>
+    <div class="key__show hide">
+      <div class="key__code"></div>
+      <div class="key__container">
+        <div class="key__item">
+          <div class="key__title">Key</div>
+          <div id="key__key"></div>
+        </div>
+        <div class="key__item">
+          <div class="key__title">Location</div>
+          <div id="key__location"></div>
+        </div>
+        <div class="key__item">
+          <div class="key__title">Which</div>
+          <div id="key__key-code"></div>
+        </div>
+        <div class="key__item">
+          <div class="key__title">Code</div>
+          <div id="key__code-item"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.onkeydown = (e) => {
+        document.querySelector(".wait").classList.add("hide");
+        document.querySelector(".key__show").classList.remove("hide");
+        document.querySelector(".key__code").innerHTML = e.keyCode;
+        if (e.key === " ") {
+          document.getElementById("key__key").innerHTML = "Space";
+        } else {
+          document.getElementById("key__key").innerHTML = e.key;
+        }
+        document.getElementById("key__location").innerHTML = e.location;
+        document.getElementById("key__key-code").innerHTML = e.keyCode;
+        document.getElementById("key__code-item").innerHTML = e.code;
+      };
+    </script>
+  </body>
+</html>

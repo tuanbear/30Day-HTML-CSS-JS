@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="image grid">
+      <div class="img">
+        <img src="https://picsum.photos/id/277/250/200" alt="Ảnh 1" />
+      </div>
+      <div class="img">
+        <img src="https://picsum.photos/id/124/250/200" alt="Ảnh 2" />
+      </div>
+      <div class="img">
+        <img src="https://picsum.photos/id/67/250/200" alt="Ảnh 3" />
+      </div>
+      <div class="img">
+        <img src="https://picsum.photos/id/765/250/200" alt="Ảnh 4" />
+      </div>
+      <div class="img">
+        <img src="https://picsum.photos/id/345/250/200" alt="Ảnh 5" />
+      </div>
+      <div class="img">
+        <img src="https://picsum.photos/id/211/250/200" alt="Ảnh 6" />
+      </div>
+      <div class="img">
+        <img src="https://picsum.photos/id/999/250/200" alt="Ảnh 7" />
+      </div>
+      <div class="img">
+        <img src="https://picsum.photos/id/172/250/200" alt="Ảnh 8" />
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="gallery_img">
+        <img src="" alt="" />
+      </div>
+      <div class="controls gallery_close">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="controls gallery_control-left">
+        <i class="fa-solid fa-chevron-left"></i>
+      </div>
+      <div class="controls gallery_control-right">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    </div>
+    <script>
+      const gallery = document.querySelector(".gallery");
+      const imgShow = document.querySelectorAll(".img img");
+      const galleryImg = document.querySelector(".gallery_img img");
+      const close = document.querySelector(".gallery_close");
+      const arrowLeft = document.querySelector(".gallery_control-left");
+      const arrowRight = document.querySelector(".gallery_control-right");
+
+      var idImg = 0;
+
+      function showGallery() {
+        galleryImg.src = imgShow[idImg].src;
+        gallery.classList.add("show");
+        if (idImg === 0) {
+          arrowLeft.classList.add("hide");
+        } else {
+          arrowLeft.classList.remove("hide");
+        }
+        if (idImg === 7) {
+          arrowRight.classList.add("hide");
+        } else {
+          arrowRight.classList.remove("hide");
+        }
+      }
+
+      imgShow.forEach((item, index) => {
+        item.onclick = () => {
+          idImg = index;
+          showGallery();
+        };
+      });
+
+      close.addEventListener("click", () => {
+        gallery.classList.remove("show");
+      });
+      arrowLeft.onclick = () => {
+        if (idImg > 0) {
+          --idImg;
+          showGallery();
+        }
+      };
+      arrowRight.onclick = () => {
+        if (idImg < imgShow.length - 1) {
+          ++idImg;
+          showGallery();
+        }
+      };
+      document.addEventListener("keydown", (e) => {
+        if (e.keyCode === 27) {
+          gallery.classList.remove("show");
+        }
+        if (e.keyCode === 37) {
+          if (idImg > 0) {
+            --idImg;
+            showGallery();
+          }
+        }
+        if (e.keyCode === 39) {
+          if (idImg < 7) {
+            ++idImg;
+            showGallery();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

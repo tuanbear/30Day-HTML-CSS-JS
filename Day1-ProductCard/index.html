@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Card</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="card_heart" onclick="clickHeart()">
+        <i class="bx bx-heart"></i>
+      </div>
+      <div class="card_cart"><i class="bx bx-shopping-bag"></i></div>
+      <div class="card_img">
+        <img src="../Img/day1_sneaker.png" alt="" />
+      </div>
+      <div class="card_title">Nike Jordan 1</div>
+      <div class="card_price">$99</div>
+      <div class="card_size">
+        Size:
+        <span class="card_size-number">6</span>
+        <span class="card_size-number">7</span>
+        <span class="card_size-number">8</span>
+        <span class="card_size-number">9</span>
+      </div>
+      <div class="card_color">
+        Color:
+        <span class="card__color-red"></span>
+        <span class="card__color-green"></span>
+        <span class="card__color-black"></span>
+      </div>
+      <div class="card_action">
+        <button>Buy now</button>
+        <button>Add cart</button>
+      </div>
+    </div>
+    <script>
+      function clickHeart() {
+        if (document.querySelector(".bx-heart")) {
+          document.querySelector(".card_heart").innerHTML =
+            '<i class="bx bxs-heart"></i>';
+        } else {
+          document.querySelector(".card_heart").innerHTML =
+            '<i class="bx bx-heart"></i>';
+        }
+      }
+    </script>
+  </body>
+</html>

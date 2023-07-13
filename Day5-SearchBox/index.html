@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Box</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="search__box">
+      <input class="search__box-input" type="text" />
+      <button class="search__box-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </body>
+  <script>
+    const btn = document.querySelector(".search__box-btn");
+    btn.addEventListener("click", function () {
+      this.parentElement.classList.toggle("open");
+      this.previousElementSibling.focus();
+      btn.onmousedown = function (e) {
+        e.preventDefault();
+      };
+      this.previousElementSibling.onblur = function () {
+        this.parentElement.classList.remove("open");
+      };
+    });
+  </script>
+</html>

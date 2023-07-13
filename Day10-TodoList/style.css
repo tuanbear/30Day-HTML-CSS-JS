@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #ffe000, #799f0c);
+  font-family: "san-serif";
+}
+.container {
+  margin: 100px auto;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.form {
+  position: relative;
+}
+.search {
+  width: 100%;
+  border: none;
+  border-bottom: 1.7px solid #999;
+  background-color: #fff;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 25px;
+}
+.btn {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  border: none;
+  background-color: #9acd32;
+  color: #fff;
+  border-radius: 5px;
+  padding: 6px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.todo_list {
+  font-size: 25px;
+  padding: 15px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+.todo_list:not(:last-child) {
+  border-bottom: 1px solid #999;
+}
+.todo_list:hover .fa-solid {
+  visibility: inherit;
+}
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+.fa-solid {
+  float: right;
+  color: #999;
+  visibility: hidden;
+}
