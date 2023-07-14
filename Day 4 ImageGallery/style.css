@@ -51,7 +51,7 @@ body {
 }
 .gallery_img {
   width: 70%;
-  height: 70vh;
+  /* height: 70vh; */
 }
 .gallery_img img {
   width: 100%;

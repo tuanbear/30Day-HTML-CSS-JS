@@ -43,6 +43,9 @@ body {
   padding: 5px 0;
   font-size: 17px;
 }
+.form__group input:focus {
+  border-bottom-color: #fff;
+}
 .form__group input:focus ~ span {
   width: 100%;
 }
@@ -79,6 +82,9 @@ form input[type="submit"]:hover {
 }
 .link__signup a:hover {
   text-decoration: underline;
+}
+.form__group.error input {
+  border-bottom-color: #fff;
 }
 .form__group.error span {
   border-bottom: 2px solid #ec2c2c;

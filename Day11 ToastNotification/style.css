@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --success: rgb(0, 128, 0);
+  --success-light: rgba(0, 128, 0, 0.5);
+  --warning: rgb(255, 165, 0);
+  --warning-light: rgba(255, 165, 0, 0.5);
+  --error: rgb(255, 0, 0);
+  --error-light: rgba(255, 0, 0, 0.5);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: #b2e081;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+}
+.btn_show {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.btn_show:not(:last-child) {
+  margin-right: 10px;
+}
+.btn_show.success {
+  background-color: var(--success);
+}
+.btn_show.warning {
+  background-color: var(--warning);
+}
+.btn_show.error {
+  background-color: var(--error);
+}
+#toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+.toast_mess {
+  color: #fff;
+  font-size: 17px;
+  padding: 20px 40px 20px 60px;
+  margin: 15px 0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.toast_mess.mess_success {
+  background-color: var(--success-light);
+  border-left: 7px solid var(--success);
+}
+.toast_mess.mess_warning {
+  background-color: var(--warning-light);
+  border-left: 7px solid var(--warning);
+}
+.toast_mess.mess_error {
+  background-color: var(--error-light);
+  border-left: 5px solid var(--error);
+}
+.fa-solid {
+  position: absolute;
+  left: 18px;
+  top: 20px;
+  font-size: 25px;
+}
+.toast_mess .count_down {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 100%;
+}
+.count_down.count_down-success {
+  background-color: var(--success);
+}
+.count_down.count_down-warning {
+  background-color: var(--warning);
+}
+.count_down.count_down-error {
+  background-color: var(--error);
+}
+@keyframes countDown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes slideShow {
+  0% {
+    transform: translateX(calc(100% + 22px));
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideHide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(calc(100% + 22px));
+  }
+  100% {
+    transform: translateX(calc(100% + 22px));
+  }
+}
