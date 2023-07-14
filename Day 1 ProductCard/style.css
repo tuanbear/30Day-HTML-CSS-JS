@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(to right, #9f585c, #a6252c);
+  background: linear-gradient(to right, #4daf54, #3d8880);
   font-family: "Poppins";
 }
 .card {
@@ -64,7 +64,7 @@ body {
   font-size: 25px;
 }
 .card_title {
-  color: #a6252c;
+  color: #4daf54;
 }
 .card_price {
   color: #fff;
@@ -111,7 +111,7 @@ body {
 .card_action button {
   border: none;
   color: #fff;
-  background-color: #a6252c;
+  background-color: #4daf54;
   border-radius: 3px;
   padding: 8px 15px;
   cursor: pointer;
