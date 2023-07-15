@@ -20,6 +20,11 @@ body {
   align-items: center;
   font-family: "Poppins";
 }
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .btn_show {
   border: none;
   padding: 10px 20px;
@@ -27,10 +32,7 @@ body {
   color: #fff;
   font-size: 18px;
   cursor: pointer;
-  margin-bottom: 20px;
-}
-.btn_show:not(:last-child) {
-  margin-right: 10px;
+  margin: 0 5px 20px;
 }
 .btn_show.success {
   background-color: var(--success);
