@@ -45,8 +45,11 @@ body {
 .modal_inner {
   position: absolute;
   top: 22vh;
-  left: 35%;
-  width: 450px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
   color: #fff;
   border-radius: 5px;
   overflow: hidden;
