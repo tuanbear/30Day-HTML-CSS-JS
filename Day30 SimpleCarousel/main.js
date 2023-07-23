@@ -6,7 +6,6 @@ wrapper.addEventListener("mousedown", function (e) {
   isMouseDown = true;
   startX = e.pageX - wrapper.offsetLeft;
   scrollLeft = wrapper.scrollLeft;
-  console.log(startX);
 });
 
 wrapper.addEventListener("mouseleave", function (e) {
